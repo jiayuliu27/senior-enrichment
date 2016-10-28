@@ -4,6 +4,18 @@
 // so any other part of the application could call sequelize.model('User')
 // to get access to the User model.
 
-const User = require('./user')
+const User = require('./user');
+const Question = require('./question');
+const Response = require('./response');
 
-module.exports = {User}
+Question.hasMany(Response, { onDelete: 'cascade', hooks: true });
+Response.belongsTo(Question);
+User.hasMany(Response, { onDelete: 'cascade', hooks: true });
+Response.belongsTo(User);
+
+
+module.exports = {
+	User,
+	Question,
+	Response
+}

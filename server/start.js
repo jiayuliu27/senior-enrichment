@@ -31,6 +31,13 @@ module.exports = app
   // Send index.html for anything else.
   .get('/*', (_, res) => res.sendFile(resolve(__dirname, '..', 'public', 'index.html')))
 
+  // error handling middleware
+  .use((err, req, res, next) => {
+    if(err.status) 
+      return res.status(err.status).end();
+    res.status(500).send();
+  })
+
 if (module === require.main) {
   // Start listening only if we're the main module.
   // 
