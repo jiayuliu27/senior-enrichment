@@ -6,5 +6,5 @@ module.exports = db.define('question', {
 	content: {
 		type: Sequelize.STRING
 	}
-})
+});
 
