@@ -1,6 +1,7 @@
 'use strict';
-var Sequelize = require('sequelize')
-var db = require('APP/db')
+var Sequelize = require('sequelize');
+var db = require('APP/db');
+let Response = require('./response');
 
 module.exports = db.define('users', {
   firstName: Sequelize.STRING,

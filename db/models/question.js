@@ -7,4 +7,3 @@ module.exports = db.define('question', {
 		type: Sequelize.STRING
 	}
 });
-
