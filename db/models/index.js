@@ -5,5 +5,10 @@
 // to get access to the User model.
 
 const User = require('./user')
+const Question = require('./question')
+const Comment = require('./comment')
 
-module.exports = {User}
+Comment.belongsTo(Question);
+Comment.belongsTo(User);
+
+module.exports = { User , Question, Comment }
